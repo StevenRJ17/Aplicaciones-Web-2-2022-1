@@ -1,0 +1,20 @@
+# Imagen a usar
+FROM node
+
+COPY . /app/rutaEstudiante
+
+# Directorio de trabajo
+WORKDIR /app/rutaEstudiante
+
+# Comando a ejecutar
+RUN npm install
+
+# Variables de entorno
+ENV PORT 3000
+ENV MONGODB_CNN=mongodb://mongo:27017/test
+
+# Puerto
+EXPOSE 3000
+
+# Ejecutable y Script
+ENTRYPOINT ["npm", "start"]

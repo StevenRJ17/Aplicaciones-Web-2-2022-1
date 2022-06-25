@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  api:
+    build: .
+
+    # Dependencia
+    depends_on:
+      - mongo
+    
+    # Variables de entorno
+    environment:
+      - PORT=3000
+      - MONGODB_CNN=mongodb://mongo:27017/test
+    
+    # Puertos
+    ports: ["3000:3000"]
+    
+  mongo:
+    # Imagen a usar y su versión
+    image: mongo:4.4.6

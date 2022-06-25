@@ -12,7 +12,7 @@ const obtenerEstudiantes = async (req: Request, res: Response) => {
                 countDocuments(query),
             Estudiante
                 .find(query)
-                .populate('usuarios', 'alquileres')
+                // .populate('usuarios', 'alquileres')
                 .skip(Number(desde))
                 .limit(Number(limite))
         ]
@@ -20,7 +20,7 @@ const obtenerEstudiantes = async (req: Request, res: Response) => {
     res.json(
         {
             total,
-            estudiantes
+            estudiantes 
         }
     )
 }
@@ -28,7 +28,7 @@ const obtenerEstudiantes = async (req: Request, res: Response) => {
 // Consultar un estudiante por su id
 const obtenerEstudiante = async (req: Request, res: Response) => {
     const { id } = req.params;
-    const estudiante:IEstudiante|null = await Estudiante.findById(id).populate('usuarios', 'alquileres');
+    const estudiante:IEstudiante|null = await Estudiante.findById(id) //.populate('usuarios', 'alquileres');
     res.json(estudiante);
 }
 

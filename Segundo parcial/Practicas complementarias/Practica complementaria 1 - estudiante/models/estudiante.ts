@@ -7,12 +7,15 @@ const { Schema, Model } = mongoose;
 const estudianteSchema: mongoose.Schema = new Schema<IEstudiante>(
 	{
 		usuario: {
-			type: Schema.Types.ObjectId,
-			ref: "usuarios"
+			// type: Schema.Types.ObjectId,
+			// ref: "usuarios"
+			type: String
 		},
 		alquiler: {
-			type: Schema.Types.ObjectId,
-			ref: "alquileres"
+			// type: Schema.Types.ObjectId,
+			// ref: "alquileres"
+			type: String
+
 		},
 		nombre: {
 			type: String,

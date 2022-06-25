@@ -31,7 +31,7 @@ const obtenerEstudiantes = (req, res) => __awaiter(void 0, void 0, void 0, funct
             countDocuments(query),
         index_1.Estudiante
             .find(query)
-            .populate('usuarios', 'alquileres')
+            // .populate('usuarios', 'alquileres')
             .skip(Number(desde))
             .limit(Number(limite))
     ]);
@@ -44,7 +44,7 @@ exports.obtenerEstudiantes = obtenerEstudiantes;
 // Consultar un estudiante por su id
 const obtenerEstudiante = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
-    const estudiante = yield index_1.Estudiante.findById(id).populate('usuarios', 'alquileres');
+    const estudiante = yield index_1.Estudiante.findById(id); //.populate('usuarios', 'alquileres');
     res.json(estudiante);
 });
 exports.obtenerEstudiante = obtenerEstudiante;
