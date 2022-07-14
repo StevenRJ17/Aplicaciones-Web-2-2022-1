@@ -1,14 +1,24 @@
 version: '3'
 
 services:
-  otras:
-    build: ./microservicios/otras
+  alquiler:
+    build: ./microservicios/alquiler
     depends_on:
-      - db_otras
+      - db_alquiler
     environment:
       - PORT=3000
-      - MONGODB_CNN=mongodb://db_otras:27017/test
-  db_otras:
+      - MONGODB_CNN=mongodb://db_alquiler:27017/test
+  db_alquiler:
+    image: mongo:4.4.6
+
+  contratista:
+    build: ./microservicios/contratista
+    depends_on:
+      - db_contratista
+    environment:
+      - PORT=3000
+      - MONGODB_CNN=mongodb://db_contratista:27017/test
+  db_contratista:
     image: mongo:4.4.6
 
   estudiante:
@@ -18,7 +28,27 @@ services:
     environment:
       - PORT=3000
       - MONGODB_CNN=mongodb://db_estudiante:27017/test
-  db_usuarios:
+  db_estudiante:
+    image: mongo:4.4.6
+
+  habitacion:
+    build: ./microservicios/habitacion
+    depends_on:
+      - db_habitacion
+    environment:
+      - PORT=3000
+      - MONGODB_CNN=mongodb://db_habitacion:27017/test
+  db_habitacion:
+    image: mongo:4.4.6
+
+  usuario:
+    build: ./microservicios/usuario
+    depends_on:
+      - db_usuario
+    environment:
+      - PORT=3000
+      - MONGODB_CNN=mongodb://db_usuario:27017/test
+  db_usuario:
     image: mongo:4.4.6
 
   nginx:
@@ -27,5 +57,8 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
     depends_on:
-      - otras
+      - alquiler
+      - contratista
       - estudiante
+      - habitacion
+      - usuario
