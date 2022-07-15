@@ -1,0 +1,110 @@
+body {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  width: 95%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.form-producto {
+  padding: 2rem 2.5rem;
+  border-radius: 0.7rem;
+  background-color: #ddd;
+}
+
+.form-titulo {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
+.form-grupo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  border: 1px solid  #aaa;
+  border-radius: 0.35rem;
+  padding: 5px 15px;
+  font-size: 1.3rem;
+  outline: none;
+
+}
+
+.form-control:focus {
+  border: 1px solid dodgerblue;
+}
+
+.btn {
+  width: 100%;
+  height: 2.5rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 0.35rem;
+  cursor: pointer;
+}
+
+#btn-grabar {
+  background-color: dodgerblue;
+}
+
+#btn-grabar:hover {
+  background-color: rgb(88, 171, 254);
+}
+
+/* - Table - */
+.sec-datos-tabla {
+  width: 60%;
+}
+
+.tabla-usuarios {
+  width: 100%;
+}
+
+.table-opciones {
+  display: flex;
+}
+
+thead {
+  background: #ddd;
+}
+
+thead > tr > th {
+  font-weight: 900;
+}
+
+tbody > tr > td {
+  text-align: center;
+}
+
+#btn-editar {
+  margin-right: 5px;
+  background-color: darkgoldenrod;
+}
+
+#btn-eliminar {
+  margin-left: 5px;
+  background-color: firebrick;
+}
+
+#btn-nuevo {
+  margin-top: 10px;
+  background-color: #fff;
+}
